@@ -25,15 +25,19 @@ set mouse=a
 set autoindent
 set smartindent
 syntax enable
-"set t_Co=256
+set t_Co=256
 set clipboard=unnamedplus
 set rtp+=~/.vim/bundle/Vundle.vim
-if system('date +%H') < 13
+if system('date +%H') < 12
+    colorscheme PaperColor
     set background=light
-    colorscheme gruvbox
 else
     set background=dark
-    colorscheme gruvbox
+    if &filetype == 'html'
+        colorscheme focuspoint
+    else
+        colorscheme gruvbox
+    endif
 endif
 syntax on
 set completeopt-=preview
@@ -89,7 +93,6 @@ vmap <F5> <Esc>:call CompileRun()<CR>
 imap <F6> <Esc>:call FastRun()<CR>
 map <F6> <Esc>:call FastRun()<CR>
 vmap <F6> <Esc>:call FastRun()<CR>
-
 func! FastRun()
 exec "w"
 if &filetype == 'cpp'
@@ -125,8 +128,7 @@ elseif &filetype == 'php'
 endif
 endfunc
 "custom code fillers for stuff
-imap <F2>cfm <Esc>:call CfMain()<CR>:1<CR>dd:444<CR>i<Tab>
-imap <F2>m <Esc>:call SmallMain()<CR>:1<CR>dd:33<CR>i<Tab>
+imap <F2>m <Esc>:call CfMain()<CR>:1<CR>dd:62<CR>i<Tab><Tab>
 imap <F2>cm <Esc>:call Codeforces()<CR><Esc>i
 imap <F2>bh <Esc>:call BinaryHeap()<CR><Esc>i
 imap <F2>ph <Esc>:call PairHashMap()<CR><Esc>i
@@ -182,7 +184,7 @@ endfunction
 
 func! CfMain()
 if &filetype == 'cpp'
-    r~/.vim/codelines/cpp_main_function.txt
+    r~/.vim/codelines/cpp_small_main.cpp
 elseif &filetype == 'java'
     r~/.vim/codelines/java_main_and_beginning.txt
 elseif &filetype == 'python'
@@ -208,6 +210,7 @@ call vundle#end()
 call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'cormacrelf/vim-colors-github'
     Plug 'jiangmiao/auto-pairs'
     Plug 'wokalski/autocomplete-flow'
     "Plug 'Shougo/neosnippet'
