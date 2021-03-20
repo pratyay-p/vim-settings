@@ -4,6 +4,7 @@
 "   Install YCM as per instructions in github
 "   Author: Pratyay Pande
 "   Date Created: February 28, 2020
+"   Note: Please execute update.py for installation
 "   
 "
 set number
