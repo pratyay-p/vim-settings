@@ -1,10 +1,10 @@
 import subprocess
-import datetime import datetime
+from datetime import datetime
 print('Pull(d) or push(u)?')
 n = str(input())
 if n == 'd':
     subprocess.run(['git','pull'],check=True)
-else if n == 'u':
+if n == 'u':
     nw = datetime.now()
     msg = nw.strftime("%m/%d/%Y, %H:%M:%S")
     subprocess.run(['git','add','.'],check=True)
