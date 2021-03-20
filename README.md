@@ -1,13 +1,15 @@
 # vim-settings
 A repo to contain my vim configuration files
 
-## Installation
+## Instructions for usage
 
-Clone and save as .vim file
+Clone the repository
+
 ```
-git clone https://github.com/pratyaypande/vim-settings.git .vim
+git clone https://github.com/pratyaypande/vim-settings.git
 ```
-Update the .vimrc file to contain 
+Execute the file `install.py`.
 ```
-source ~/.vim/myvimrc.vim
+cd vim-settings
+python3 install.py
 ```
