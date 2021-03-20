@@ -1,5 +1,4 @@
-# vim-settings
-My Vim configuration files.
+# My Vim configuration files (~/.vim)
 
 Tested only on Ubuntu 20.04.2. Please configure git and add SSH key to your GitHub account before proceeding.
 
