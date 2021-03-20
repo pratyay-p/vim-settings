@@ -67,12 +67,6 @@ Plugin 'enricobacis/vim-airline-clock'
 Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
-"
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
 " YCM settings: will work once YCM is installed
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -159,7 +153,6 @@ imap <F2>m <Esc>:call CfMain()<CR>:1<CR>dd:62<CR>i<Tab><Tab>
 imap <F2>cm <Esc>:call Codeforces()<CR><Esc>i
 imap <F2>bh <Esc>:call BinaryHeap()<CR><Esc>i
 imap <F2>ph <Esc>:call PairHashMap()<CR><Esc>i
-imap <F2>gcd <Esc>:call Euclidean()<CR><Esc>i
 imap <F2>srt <Esc>:call Sorting()<CR><Esc>i
 imap <F2>gph <Esc>:call Graph()<CR><Esc>i
 
@@ -182,14 +175,6 @@ func! Graph()
     endif
 endfunction
 
-func! Euclidean()
-    if &filetype == 'cpp'
-        r~/.vim/codelines/cpp_GCD_Euclid.cpp
-    endif
-    if &filetype == 'java' 
-        r~/.vim/codelines/cpp_GCD_Euclid.cpp
-    endif
-endfunction
 
 func! PairHashMap()
     if &filetype == 'cpp'
@@ -232,6 +217,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
+"airline clock settings
 let g:airline#extensions#clock#auto = 0
 function! AirlineInit()
     let g:airline_section_z = airline#section#create(['clock', g:airline_symbols.space, g:airline_section_z])

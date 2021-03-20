@@ -1,6 +1,6 @@
 # My Vim configuration files (~/.vim)
 
-Tested only on Ubuntu 20.04.2. Please configure git and add SSH key to your GitHub account before proceeding.
+Tested on Ubuntu 20.04.2 LTS. Please configure git and add SSH key to your GitHub account before proceeding.
 
 ## Instructions for usage
 
