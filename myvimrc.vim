@@ -1,11 +1,6 @@
-"   My personal configurations of Vim
-"   Install Vundle
-"   Install plugins bu :PluginInstall
-"   Install YCM as per instructions in github
 "   Author: Pratyay Pande
 "   Date Created: February 28, 2020
-"   Note: Please execute update.py for installation
-"   
+"   Note: Please execute update.py for updating the file
 "
 set number
 syntax on
