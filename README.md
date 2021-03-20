@@ -1,5 +1,7 @@
 # vim-settings
-A repo to contain my vim configuration files
+My Vim configuration files.
+
+Tested only on Ubuntu 20.04.2. Please configure git and add SSH key to your GitHub account before proceeding.
 
 ## Instructions for usage
 
