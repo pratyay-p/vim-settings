@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/pratyay/.vim/colors'
-let g:netrw_dirhist_2='/home/pratyay/.vim'
-let g:netrw_dirhist_1='/home/pratyay/.vim/codelines'
+let g:netrw_dirhist_3='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats/train'
+let g:netrw_dirhist_2='/home/pratyay/pythonprojects/tflow/conv_nn'
+let g:netrw_dirhist_1='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats/test'
+let g:netrw_dirhist_0='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats'
+let g:netrw_dirhist_9='/home/pratyay/pythonprojects/tflow/conv_nn'
+let g:netrw_dirhist_8='/home/pratyay/pythonprojects'
+let g:netrw_dirhist_7='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats'
+let g:netrw_dirhist_6='/home/pratyay/pythonprojects/tflow'
+let g:netrw_dirhist_5='/home/pratyay/pythonprojects/tflow/conv_nn'
+let g:netrw_dirhist_4='/home/pratyay/.config'

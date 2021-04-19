@@ -118,7 +118,7 @@ vmap <F6> <Esc>:call FastRun()<CR>
 func! FastRun()
 exec "w"
 if &filetype == 'cpp'
-    exec "!g++ -std=c++17 -Wshadow -Wall % -O2 -Wno-unused-result && time ./a.out && rm a.out"
+    exec "!g++ -std=c++17 -Wshadow -Wall % -O2 -Wno-unused-result && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
 endif
 endfunc
 
@@ -127,7 +127,7 @@ exec "w"
 if &filetype == 'c'
     exec "!gcc -pipe -O2 -std=c11 % -lm && time ./a.out && rm a.out"
 elseif &filetype == 'cpp'
-    exec "!g++ -std=c++17 -Wshadow -Wall % -D_GLIBCXX_DEBUG -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && time ./a.out && rm a.out"
+    exec "!g++ -std=c++17 -Wshadow -Wall % -D_GLIBCXX_DEBUG -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
     " flags which somehow dont work in windows: -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG"
     " Ubuntu 20.04: a.out and Windows 10: a.exe
 elseif &filetype == 'java'
@@ -165,7 +165,8 @@ endfunction
 
 func! Sorting()
     if  &filetype == 'cpp'
-        r~/.vim/codelines/cpp_sorting.cpp
+        echo "Helloworld"
+"        r~/.vim/codelines/cpp_sorting.cpp
     endif
 endfunction
 
