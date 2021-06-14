@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='C:/Users/LeoCE/Projects/pratyaypande.github.io/scripts'
 let g:netrw_dirhist_5='/sys/class/backlight/amdgpu_bl0'
 let g:netrw_dirhist_4='1_minimum_flight_cost'
 let g:netrw_dirhist_3='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats/train'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_0='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats'
 let g:netrw_dirhist_9='/home/pratyay/pythonprojects/tflow/conv_nn'
 let g:netrw_dirhist_8='/home/pratyay/pythonprojects'
 let g:netrw_dirhist_7='/home/pratyay/pythonprojects/tflow/conv_nn/dogs-vs-cats'
-let g:netrw_dirhist_6='/home/pratyay/pythonprojects/tflow'

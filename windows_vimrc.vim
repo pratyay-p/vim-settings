@@ -121,6 +121,7 @@ func! FastRun()
 exec "w"
 if &filetype == 'cpp'
     exec "!g++ -std=c++17 -Wshadow -Wall % -O2 -Wno-unused-result && echo 'Compiled... Ready for input...' && a.exe && del a.exe"
+    
 endif
 endfunc
 
@@ -137,7 +138,7 @@ elseif &filetype == 'java'
 elseif &filetype == 'sh'
     exec "!bash %"
 elseif &filetype == 'python'
-    exec "!python3 %"
+    exec "!python %"
 elseif &filetype == 'html'
     exec "!google-chrome % &"
 elseif &filetype == 'go'
@@ -160,7 +161,7 @@ imap <F2>gph <Esc>:call Graph()<CR><Esc>i
 
 func! SmallMain()
     if  &filetype == 'cpp'
-        r~/.vim/codelines/cpp_small_main.cpp
+        r~/vimfiles/codelines/cpp_small_main.cpp
     endif
 endfunction
 
@@ -174,38 +175,38 @@ endfunction
 
 func! Graph()
     if  &filetype == 'cpp'
-        r~/.vim/codelines/cpp_graph.cpp
+        r~/vimfiles/codelines/cpp_graph.cpp
     endif
 endfunction
 
 
 func! PairHashMap()
     if &filetype == 'cpp'
-        r~/.vim/codelines/cpp_pair_hashmap.cpp
+        r~/vimfiles/codelines/cpp_pair_hashmap.cpp
     endif
 endfunction
 
 func! BinaryHeap()
 if &filetype == 'cpp'
-    r~/.vim/codelines/cpp_heap_struct.cpp
+    r~/vimfiles/codelines/cpp_heap_struct.cpp
 endif
 endfunction
 
 func! Codeforces()
 if &filetype == 'cpp'
-    r~/.vim/codelines/cf_loop_t.cpp
+    r~/vimfiles/codelines/cf_loop_t.cpp
 endif
 endfunction
 
 func! CfMain()
 if &filetype == 'cpp'
-    r~/.vim/codelines/cpp_small_main.cpp
+    r~/vimfiles/codelines/cpp_small_main.cpp
 elseif &filetype == 'java'
-    r~/.vim/codelines/java_main_and_beginning.java
+    r~/vimfiles/codelines/java_main_and_beginning.java
 elseif &filetype == 'python'
-    r~/.vim/codelines/python_beginning_main.py
+    r~/vimfiles/codelines/python_beginning_main.py
 elseif &filetype == 'html'
-    r~/.vim/codelines/html_vscode_doc.txt
+    r~/vimfiles/codelines/html_vscode_doc.txt
 endif
 endfunction
 highlight Pmenu ctermbg=gray gui=bold
