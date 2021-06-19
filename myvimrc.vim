@@ -125,7 +125,7 @@ endfunc
 func! CompileRun()
 exec "w"
 if &filetype == 'c'
-    exec "!gcc -pipe -O2 -std=c11 % -lm && time ./a.out && rm a.out"
+    exec "!gcc -pipe -O2 -std=c17 % -lm && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
 elseif &filetype == 'cpp'
     exec "!g++ -std=c++17 -Wshadow -Wall % -D_GLIBCXX_DEBUG -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
     " flags which somehow dont work in windows: -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG"
