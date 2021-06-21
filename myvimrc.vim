@@ -146,10 +146,12 @@ elseif &filetype == 'matlab'
     exec "!octave %:p"
 elseif &filetype == 'php'
     exec "!php %"
+elseif &filetype == 'Makefile'
+    exec "!make"
 endif
 endfunc
 "custom code fillers for stuff
-imap <F2>m <Esc>:call CfMain()<CR>:1<CR>dd:62<CR>i<Tab><Tab>
+imap <F2>m <Esc>:call CfMain()<CR>:1<CR>dd:61<CR>o
 imap <F2>cm <Esc>:call Codeforces()<CR><Esc>i
 imap <F2>bh <Esc>:call BinaryHeap()<CR><Esc>i
 imap <F2>ph <Esc>:call PairHashMap()<CR><Esc>i
@@ -198,6 +200,8 @@ endfunction
 func! CfMain()
 if &filetype == 'cpp'
     r~/.vim/codelines/cpp_small_main.cpp
+elseif &filetype == 'c'
+    r~/.vim/codelines/c_main.c
 elseif &filetype == 'java'
     r~/.vim/codelines/java_main_and_beginning.java
 elseif &filetype == 'python'
