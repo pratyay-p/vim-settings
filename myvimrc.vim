@@ -32,18 +32,24 @@ set linespace=0
 set ignorecase
 set smartcase
 set nohlsearch
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
-set expandtab
+set softtabstop=0 noexpandtab smarttab
+if &filetype == 'c'
+    set tabstop=8
+    set shiftwidth=8
+elseif &filetype == 'cpp'
+    set tabstop=8
+    set shiftwidth=8
+else
+    set tabstop=4
+    set shiftwidth=4
+endif
 set title
 set nobackup
 set noswapfile
 set sidescroll=0
 set splitbelow
 set mouse=a
-set autoindent
-set smartindent
+"set smartindent
 syntax enable
 set t_Co=256
 set clipboard=unnamedplus
