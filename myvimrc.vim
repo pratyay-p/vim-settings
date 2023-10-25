@@ -152,6 +152,8 @@ elseif &filetype == 'matlab'
     exec "!octave %:p"
 elseif &filetype == 'php'
     exec "!php %"
+elseif &filetype == 'asm'
+	exec "!as % -o asm_obj.o && gcc -o asm_exec asm_obj.o -nostdlib -static && echo 'Running ...' && time ./asm_exec && rm asm_exec asm_obj.o"
 elseif &filetype == 'Makefile'
     exec "!make"
 endif
@@ -234,3 +236,5 @@ function! AirlineInit()
     let g:airline_section_z = airline#section#create(['clock', g:airline_symbols.space, g:airline_section_z])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
+
+let g:ycm_global_ycm_extra_conf = "$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py"
