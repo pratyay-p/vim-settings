@@ -8,25 +8,23 @@ set backspace=2
 set background=dark
 set laststatus=2
 " additional settings for gvim - if used in windows
-"if has("gui_running")
+if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt).
-    " set guifont=Lucida_Console:h10 " change the : to a space when on vim-gtk
-    " set guioptions -=T
-    " set guioptions -=m
-    " set lines=45 columns=140
+	if has("gui_gtk")
+		:set guifont=Mono\ 9
+	elseif has("x11")
+		:set guifont=*-lucidatypewriter-medium-r-normal-*-*-180-*-*-m-*-*
+	elseif has("gui_win32")
+		:set guifont=Luxi_Mono:h9:cANSI
+	endif
+
+    set guioptions -=T
+    set guioptions -=m
+    set lines=45 columns=150
     " set guicursor+=n-v-c:blinkon0
     " set guicursor+=i:ver100-iCursor
-"else
-  " This is console Vim.
-"  if exists("+lines")
-"    set lines=50
-"  endif
-"  if exists("+columns")
-"    set columns=100
-"  endif
-"endif
-set relativenumber
+endif
 set incsearch
 set linespace=0
 set ignorecase
@@ -62,9 +60,7 @@ filetype off
 set shellslash
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle')
-" windows: call vundle#begin('~\vimfiles\bundle')
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
@@ -124,14 +120,14 @@ vmap <F6> <Esc>:call FastRun()<CR>
 func! FastRun()
 exec "w"
 if &filetype == 'cpp'
-    exec "!g++ -std=c++17 -Wshadow -Wall % -O2 -Wno-unused-result && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
+    exec "!g++ -std=c++17 -pthread -Wshadow -Wall % -O2 -Wno-unused-result && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
 endif
 endfunc
 
 func! CompileRun()
 exec "w"
 if &filetype == 'c'
-    exec "!gcc -pipe -O2 -std=c11 % -lm && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
+    exec "!gcc -pthread -pipe -O2 -std=c11 % -lm && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
 elseif &filetype == 'cpp'
     exec "!g++ -std=c++17 -Wshadow -Wall % -D_GLIBCXX_DEBUG -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
     " flags which somehow dont work in windows: -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG"

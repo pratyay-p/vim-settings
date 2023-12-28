@@ -11,12 +11,12 @@ set laststatus=2
 if has("gui_running")
     " GUI is running or is about to start.
     " Maximize gvim window (for an alternative on Windows, see simalt).
-    set guifont=Lucida_Console:h10 " change the : to a space when on vim-gtk
+    set guifont=Lucida_Console h10 " change the : to a space when on vim-gtk
     set guioptions -=T
     set guioptions -=m
     set lines=45 columns=140
-    set guicursor+=n-v-c:blinkon0
-    set guicursor+=i:ver100-iCursor
+    " set guicursor+=n-v-c:blinkon0
+    " set guicursor+=i:ver100-iCursor
 "else
   " This is console Vim.
 "  if exists("+lines")
@@ -54,11 +54,9 @@ colorscheme gruvbox
 set nocompatible
 filetype off
 set shellslash
-"set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/vimfiles/bundle/Vundle.vim
-"linux: call vundle#begin('~/.vim/bundle')
-" windows: 
-call vundle#begin('~\vimfiles\bundle')
+set rtp+=~/.vim/bundle/Vundle.vim
+"linux: 
+call vundle#begin('~/.vim/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -161,7 +159,7 @@ imap <F2>gph <Esc>:call Graph()<CR><Esc>i
 
 func! SmallMain()
     if  &filetype == 'cpp'
-        r~/vimfiles/codelines/cpp_small_main.cpp
+        r~/.vim/codelines/cpp_small_main.cpp
     endif
 endfunction
 
@@ -175,38 +173,38 @@ endfunction
 
 func! Graph()
     if  &filetype == 'cpp'
-        r~/vimfiles/codelines/cpp_graph.cpp
+        r~/.vim/codelines/cpp_graph.cpp
     endif
 endfunction
 
 
 func! PairHashMap()
     if &filetype == 'cpp'
-        r~/vimfiles/codelines/cpp_pair_hashmap.cpp
+        r~/.vim/codelines/cpp_pair_hashmap.cpp
     endif
 endfunction
 
 func! BinaryHeap()
 if &filetype == 'cpp'
-    r~/vimfiles/codelines/cpp_heap_struct.cpp
+    r~/.vim/codelines/cpp_heap_struct.cpp
 endif
 endfunction
 
 func! Codeforces()
 if &filetype == 'cpp'
-    r~/vimfiles/codelines/cf_loop_t.cpp
+    r~/.vim/codelines/cf_loop_t.cpp
 endif
 endfunction
 
 func! CfMain()
 if &filetype == 'cpp'
-    r~/vimfiles/codelines/cpp_small_main.cpp
+    r~/.vim/codelines/cpp_small_main.cpp
 elseif &filetype == 'java'
-    r~/vimfiles/codelines/java_main_and_beginning.java
+    r~/.vim/codelines/java_main_and_beginning.java
 elseif &filetype == 'python'
-    r~/vimfiles/codelines/python_beginning_main.py
+    r~/.vim/codelines/python_beginning_main.py
 elseif &filetype == 'html'
-    r~/vimfiles/codelines/html_vscode_doc.txt
+    r~/.vim/codelines/html_vscode_doc.txt
 endif
 endfunction
 highlight Pmenu ctermbg=gray gui=bold
