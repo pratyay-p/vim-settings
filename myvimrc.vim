@@ -34,9 +34,11 @@ set softtabstop=0 noexpandtab smarttab
 if &filetype == 'c'
     set tabstop=8
     set shiftwidth=8
+	set colorcolumn=100
 elseif &filetype == 'cpp'
     set tabstop=8
     set shiftwidth=8
+	set colorcolumn=100
 else
     set tabstop=4
     set shiftwidth=4
@@ -58,6 +60,7 @@ colorscheme gruvbox
 set nocompatible
 filetype off
 set shellslash
+set colorcolumn=100
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle')
 " Plugin 'VundleVim/Vundle.vim'
@@ -120,7 +123,7 @@ vmap <F6> <Esc>:call FastRun()<CR>
 func! FastRun()
 exec "w"
 if &filetype == 'cpp'
-    exec "!g++ -std=c++17 -pthread -Wshadow -Wall % -O2 -Wno-unused-result && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
+    exec "!g++ -std=c++17 -pthread -Wshadow -Wall % -O2 -Wno-unused-result && echo 'Compiled... Running...' && time ./a.out && rm a.out"
 endif
 endfunc
 
@@ -129,8 +132,8 @@ exec "w"
 if &filetype == 'c'
     exec "!gcc -pthread -pipe -O2 -std=c11 % -lm && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
 elseif &filetype == 'cpp'
-    exec "!g++ -std=c++17 -Wshadow -Wall % -D_GLIBCXX_DEBUG -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && echo 'Compiled... Ready for input...' && time ./a.out && rm a.out"
-    " flags which somehow dont work in windows: -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG"
+    exec "!g++ -std=c++17 -Wpedantic -Wshadow -Wall -Werror % -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && echo 'Compiled... Running...' && time ./a.out && rm a.out"
+    " wont work in win64 (GLIBCXX and mingw = gcc 6 or older): -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG"
     " Ubuntu 20.04: a.out and Windows 10: a.exe
 elseif &filetype == 'java'
     exec "!javac % && time java %"
