@@ -1,13 +1,11 @@
-# My Vim configuration files (~/.vim)
-
-Tested on Ubuntu 20.04.2 LTS. Please configure git and add SSH key to your GitHub account before proceeding.
+# Vim configuration files (~/.vim)
 
 ## Instructions for usage
 
 Clone the repository
 
 ```
-git clone https://github.com/pratyaypande/vim-settings.git
+git clone https://github.com/pratyaypande/vim-settings.git ~/.vim
 ```
 Execute the file `install.py`.
 ```
